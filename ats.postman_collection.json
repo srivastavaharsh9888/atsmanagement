@@ -1,0 +1,160 @@
+{
+	"info": {
+		"_postman_id": "af2c52ec-2fec-42ba-8962-6afffe97833d",
+		"name": "ats",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "28433812"
+	},
+	"item": [
+		{
+			"name": "Create Candidates",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"full_name\": \"Harsh Srivastava\",\n  \"email\": \"test7@gmail.com\",\n  \"password\": \"aSecurePassword\",\n  \"age\": 27,\n  \"gender\": \"F\",\n  \"years_of_exp\": 4,\n  \"phone_number\": \"8853833881\",\n  \"current_salary\": 2200000,\n  \"expected_salary\": 3000000,\n  \"status\": \"Applied\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/management/candidates/"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Candidates",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"status\": \"Rejected\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/management/candidates/"
+			},
+			"response": []
+		},
+		{
+			"name": "Get single candidate based on id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"status\": \"Rejected\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/management/candidates/15/"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Candidate Detail",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"age\": \"40\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/management/candidates/1/"
+			},
+			"response": []
+		},
+		{
+			"name": "Shortlist Candidate",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"age\": \"40\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/management/candidates/1/"
+			},
+			"response": []
+		},
+		{
+			"name": "Reject Candidate",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"age\": \"40\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/management/candidates/1/"
+			},
+			"response": []
+		},
+		{
+			"name": "Search Candidate Multiple filters such age,years_of_experience",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"filters\": [\n        {\n            \"age\": {\n                \"gte\": 28,\n                \"lte\": 50\n            }\n        },\n        {\n            \"years_of_exp\": {\n                \"gt\": 5\n            }\n        }        \n    ]\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/management/candidates/search/"
+			},
+			"response": []
+		},
+		{
+			"name": "Search Candidate with name relevance and age",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n    \"filters\": [\n        {\"age\": 25}\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/management/candidates/search/"
+			},
+			"response": []
+		}
+	]
+}
